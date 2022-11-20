@@ -1,4 +1,4 @@
-package com.example.playsprboothibernet.exception;
+package com.epam.ld.block2.springplay.exception;
 
 public class RecordNotFoundException extends RuntimeException {
 

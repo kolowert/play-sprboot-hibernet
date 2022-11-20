@@ -1,8 +1,8 @@
-package com.example.playsprboothibernet.service;
+package com.epam.ld.block2.springplay.service;
 
-import com.example.playsprboothibernet.exception.RecordNotFoundException;
-import com.example.playsprboothibernet.model.EmployeeEntity;
-import com.example.playsprboothibernet.repository.EmployeeRepository;
+import com.epam.ld.block2.springplay.model.EmployeeEntity;
+import com.epam.ld.block2.springplay.repository.EmployeeRepository;
+import com.epam.ld.block2.springplay.exception.RecordNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

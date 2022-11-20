@@ -1,4 +1,4 @@
-package com.example.playsprboothibernet;
+package com.epam.ld.block2.springplay;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

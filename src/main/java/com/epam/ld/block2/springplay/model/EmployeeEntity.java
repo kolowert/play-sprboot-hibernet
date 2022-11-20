@@ -1,4 +1,4 @@
-package com.example.playsprboothibernet.model;
+package com.epam.ld.block2.springplay.model;
 
 import lombok.Getter;
 import lombok.Setter;
