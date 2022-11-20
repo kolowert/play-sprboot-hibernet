@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>new user</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+<h2 th:text="'Here is new user ' + ${newOne.name} + '.'"></h2>
+
+<span th:text="${newOne.id}"/>
+<span th:text="${newOne.name}"/>
+<span th:text="${newOne.email}"/>
+
+<br/>
+<p><a href="/index">Goto main page</a></p>
+
+</body>
+</html>

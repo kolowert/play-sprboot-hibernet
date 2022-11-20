@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Event by id</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+<h2 th:text="'Here is event, ' + ${eventById.title} + '!'"></h2>
+
+<span th:text="${eventById.id}"/>
+<span th:text="${eventById.title}"/>
+<span th:text="${eventById.date}"/>
+
+</body>
+</html>
