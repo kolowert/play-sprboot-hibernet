@@ -77,8 +77,14 @@ public class UserService {
     }
 
     public boolean deleteUser(long id) {
-
-        return false;
+        Optional<UserEntity> user = repository.findById(id);
+        if(user.isPresent()) {
+            repository.deleteById(id);
+            return true;
+        } else {
+            String msg = String.format("No user record exist for given id %d", id);
+            throw new RecordNotFoundException(msg);
+        }
     }
 
 }
