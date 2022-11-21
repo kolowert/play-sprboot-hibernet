@@ -21,7 +21,7 @@ public class UserService {
     }
 
     public List<UserEntity> getAll() {
-        List<UserEntity> result = (List<UserEntity>) repository.findAll();
+        List<UserEntity> result = repository.findAll();
 
         if(result.size() > 0) {
             return result;
@@ -39,4 +39,46 @@ public class UserService {
             throw new RecordNotFoundException(msg);
         }
     }
+
+    public List<UserEntity> getUsersByName(String name, int pageSize, int pageNum) {
+        List<UserEntity> result = repository.findUserEntityByUsername(name);
+        if(result.size() > 0) {
+            return result;
+        } else {
+            return new ArrayList<>();
+        }
+    }
+
+    public UserEntity getUserByEmail(String email, int pageSize, int pageNum) {
+        Optional<UserEntity> result = repository.findUserEntityByEmail(email);
+        if (result.isPresent()) {
+            return result.get();
+        } else {
+            String msg = String.format("No user record exist for given e-mail %s", email);
+            throw new RecordNotFoundException(msg);
+        }
+    }
+
+    public UserEntity createUser(UserEntity user) {
+        if (user.getId() == null) {
+            user = repository.save(user);
+            return user;
+
+        } else {
+            Optional<UserEntity> userEntity = repository.findById(user.getId());
+            if (userEntity.isPresent()) {
+                String msg = String.format("User with id %d already exist", user.getId());
+                throw new RecordNotFoundException(msg);
+            }
+        }
+
+        String msg = String.format("Can't create User with predefined id %d", user.getId());
+        throw new RecordNotFoundException(msg);
+    }
+
+    public boolean deleteUser(long id) {
+
+        return false;
+    }
+
 }

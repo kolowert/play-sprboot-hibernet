@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
     <title>All Users</title>
@@ -23,7 +23,7 @@
     <tr th:each="user : ${allUsers}">
 
         <td><span th:text="${user.id}"/></td>
-        <td><span th:text="${user.name}"/></td>
+        <td><span th:text="${user.username}"/></td>
         <td><span th:text="${user.email}"/></td>
 
     </tr>

@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
     <title>new user</title>
@@ -8,10 +8,10 @@
 
 <body>
 
-<h2 th:text="'Here is new user ' + ${newOne.name} + '.'"></h2>
+<h2 th:text="'Here is new user ' + ${newOne.username} + '.'"></h2>
 
 <span th:text="${newOne.id}"/>
-<span th:text="${newOne.name}"/>
+<span th:text="${newOne.username}"/>
 <span th:text="${newOne.email}"/>
 
 <br/>
