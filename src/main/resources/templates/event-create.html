@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
 
 <head>
     <title>New Event: Handling Form Submission</title>
@@ -9,10 +9,9 @@
 <body>
 <h2>Create New Event</h2>
 
-<form action="#" th:action="@{/event-create}" th:object="${event}" method="POST">
-    <p>Id: <input type="numeric" th:field="*{id}" /></p>
+<form action="#" th:action="@{/event-created}" th:object="${entity}" method="POST">
     <p>Title: <input type="text" th:field="*{title}" /></p>
-    <p>Date: <input type="date" th:field="*{date}" /></p>
+    <p>Date: <input type="text" th:field="*{date}" /></p>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
 

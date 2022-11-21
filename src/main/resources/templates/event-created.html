@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
     <title>new event</title>
@@ -8,11 +8,16 @@
 
 <body>
 
-<h2 th:text="New event has been created."></h2>
+<h2>New event has been created.</h2>
 
-<span th:text="${event.id}"/>
-<span th:text="${event.title}"/>
-<span th:text="${event.date}"/>
+<span th:text="${entity.id}"/>
+<span th:text="${entity.title}"/>
+<span th:text="${entity.date}"/>
+
+<br/>
+<p>Create new event <a href="/new-event">here</a></p>
+<br/>
+<p><a href="/index">Goto main page</a></p>
 
 </body>
 </html>

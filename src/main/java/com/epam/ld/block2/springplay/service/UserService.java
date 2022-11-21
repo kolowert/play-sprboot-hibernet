@@ -1,6 +1,7 @@
 package com.epam.ld.block2.springplay.service;
 
 import com.epam.ld.block2.springplay.exception.RecordNotFoundException;
+import com.epam.ld.block2.springplay.exception.UndefinedOperationException;
 import com.epam.ld.block2.springplay.model.UserEntity;
 import com.epam.ld.block2.springplay.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,12 +69,12 @@ public class UserService {
             Optional<UserEntity> userEntity = repository.findById(user.getId());
             if (userEntity.isPresent()) {
                 String msg = String.format("User with id %d already exist", user.getId());
-                throw new RecordNotFoundException(msg);
+                throw new UndefinedOperationException(msg);
             }
         }
 
         String msg = String.format("Can't create User with predefined id %d", user.getId());
-        throw new RecordNotFoundException(msg);
+        throw new UndefinedOperationException(msg);
     }
 
     public boolean deleteUser(long id) {

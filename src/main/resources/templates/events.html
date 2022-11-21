@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
     <title>All Event</title>
@@ -8,7 +8,7 @@
 
 <body>
 
-<h2 th:text="'Here is ' + ${allEvents.size()} + ' events.'"></h2>
+<h2 th:text="'Here is ' + ${all.size()} + ' events.'"></h2>
 
 <table>
     <thead>
@@ -20,7 +20,7 @@
     </thead>
 
     <tbody>
-    <tr th:each="event : ${allEvents}">
+    <tr th:each="event : ${all}">
 
         <td><span th:text="${event.id}"/></td>
         <td><span th:text="${event.title}"/></td>

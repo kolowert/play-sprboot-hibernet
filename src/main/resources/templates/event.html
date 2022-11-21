@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
     <title>Event by id</title>
@@ -8,11 +8,11 @@
 
 <body>
 
-<h2 th:text="'Here is event, ' + ${eventById.title} + '!'"></h2>
+<h2 th:text="'Here is event, ' + ${byId.title} + '!'"></h2>
 
-<span th:text="${eventById.id}"/>
-<span th:text="${eventById.title}"/>
-<span th:text="${eventById.date}"/>
+<span th:text="${byId.id}"/>
+<span th:text="${byId.title}"/>
+<span th:text="${byId.date}"/>
 
 </body>
 </html>

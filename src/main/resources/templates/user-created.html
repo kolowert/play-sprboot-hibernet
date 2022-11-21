@@ -8,11 +8,11 @@
 
 <body>
 
-<h2 th:text="'Here is new user ' + ${newOne.username} + '.'"></h2>
+<h2 th:text="'Here is new user ' + ${entity.username} + '.'"></h2>
 
-<span th:text="${newOne.id}"/>
-<span th:text="${newOne.username}"/>
-<span th:text="${newOne.email}"/>
+<span th:text="${entity.id}"/>
+<span th:text="${entity.username}"/>
+<span th:text="${entity.email}"/>
 
 <br/>
 <p>Create new user <a href="/new-user">here</a></p>

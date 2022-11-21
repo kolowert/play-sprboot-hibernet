@@ -8,7 +8,7 @@
 
 <body>
 
-<h2 th:text="'Here is ' + ${allUsers.size()} + ' users.'"></h2>
+<h2 th:text="'Here is ' + ${all.size()} + ' users.'"></h2>
 
 <table>
     <thead>
@@ -20,7 +20,7 @@
     </thead>
 
     <tbody>
-    <tr th:each="user : ${allUsers}">
+    <tr th:each="user : ${all}">
 
         <td><span th:text="${user.id}"/></td>
         <td><span th:text="${user.username}"/></td>
