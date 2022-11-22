@@ -2,20 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
-    <title>All Users</title>
+    <title>All Tickets</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
 <body>
 
-<h2 th:text="'Here is ' + ${all.size()} + ' users.'"></h2>
+<h2 th:text="'Here is ' + ${all.size()} + ' tickets.'"></h2>
 
 <table>
     <thead>
     <tr>
         <th>ID</th>
-        <th> name</th>
-        <th> email</th>
+        <th> eventId</th>
+        <th> userId</th>
+        <th> category</th>
+        <th> place</th>
     </tr>
     </thead>
 
@@ -23,8 +25,10 @@
     <tr th:each="everyone : ${all}">
 
         <td><span th:text="${everyone.id}"/></td>
-        <td><span th:text="${everyone.username}"/></td>
-        <td><span th:text="${everyone.email}"/></td>
+        <td><span th:text="${everyone.eventId}"/></td>
+        <td><span th:text="${everyone.userId}"/></td>
+        <td><span th:text="${everyone.category}"/></td>
+        <td><span th:text="${everyone.place}"/></td>
 
     </tr>
     </tbody>

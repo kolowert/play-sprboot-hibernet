@@ -2,8 +2,10 @@ package com.epam.ld.block2.springplay.controller;
 
 import com.epam.ld.block2.springplay.exception.RecordNotFoundException;
 import com.epam.ld.block2.springplay.model.EventEntity;
+import com.epam.ld.block2.springplay.model.TicketEntity;
 import com.epam.ld.block2.springplay.model.UserEntity;
 import com.epam.ld.block2.springplay.service.EventService;
+import com.epam.ld.block2.springplay.service.TicketService;
 import com.epam.ld.block2.springplay.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +22,13 @@ public class FacadeController {
 
     private final UserService userService;
     private final EventService eventService;
+    private final TicketService ticketService;
 
     @Autowired
-    public FacadeController(UserService userService, EventService eventService) {
+    public FacadeController(UserService userService, EventService eventService, TicketService ticketService) {
         this.userService = userService;
         this.eventService = eventService;
+        this.ticketService = ticketService;
     }
 
     @GetMapping("index")
@@ -162,6 +166,23 @@ public class FacadeController {
         model.addAttribute("status", isDeleted);
         log.info("# # # FacadeController report: Event with id:{} has been eliminated", id);
         return "event-info";
+    }
+
+    @GetMapping("tickets")
+    public String getAllTickets(Model model) {
+        log.info("# # # FacadeController is asked to get All Tickets.");
+        List<TicketEntity> all = ticketService.getAll();
+        model.addAttribute("all", all);
+        log.info("# # # FacadeController received list of all tickets. And size of list is {}", all.size());
+        return "tickets";
+    }
+
+    @GetMapping("ticket/{id}")
+    public String getTicketById(@PathVariable("id") long id, Model model) {
+        log.info("# # # FacadeController is asked to get Ticket By Id {}", id);
+        TicketEntity entity = ticketService.getTicketById(id);
+        model.addAttribute("entity", entity);
+        return "ticket";
     }
 
 }

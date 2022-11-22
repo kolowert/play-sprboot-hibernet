@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <title>Ticket</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+<h2 th:text="'Here is ticket, ' + ${entity.id} + '!'"></h2>
+
+<span th:text="'ticket id: ' + ${entity.id}"/>
+<span th:text="'event id: ' + ${entity.eventId}"/>
+<span th:text="'user id: ' + ${entity.userId}"/>
+<span th:text="'category: ' + ${entity.category}"/>
+<span th:text="'place: ' + ${entity.place}"/>
+
+</body>
+</html>
