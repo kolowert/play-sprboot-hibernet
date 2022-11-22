@@ -25,7 +25,7 @@ public class TicketEntity implements Tiket {
     private long userId;
 
     @Column(name="category")
-    private Category category;
+    private String category;
 
     @Column(name="place")
     private int place;

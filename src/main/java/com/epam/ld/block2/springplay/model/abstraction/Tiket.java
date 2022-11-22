@@ -1,7 +1,7 @@
 package com.epam.ld.block2.springplay.model.abstraction;
 
 public interface Tiket {
-    enum Category { STANDARD, PREMIUM, BAR }
+    //enum Category { STANDARD, PREMIUM, BAR }
 
     /**
      * Ticket Id. UNIQUE.
